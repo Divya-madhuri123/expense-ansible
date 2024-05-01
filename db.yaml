@@ -5,15 +5,15 @@
     login_host: db.daws78s.online
   vars_prompt:
   - name: mysql_root_password
-    prompt: please enter MySQL root password
+    prompt: please enter MYSQL root password
     private: no
   tasks:
-  - name: Install MySQL Server
+  - name: Install MYSQL Server
     ansible.builtin.dnf:
       name: mysql-server
       state: latest
 
-  - name: Start and Enable MySQL server
+  - name: Start and Enable MYSQL server
     ansible,buitin.service:
       name: mysqld
       state: started
@@ -22,7 +22,7 @@
   - name: install python mysql dependencies
     ansible.builtin.pip:
       name:
-      - PyMySQL
+      - PyMYSQL
       - cryptography
       executable: pip3.9
 
